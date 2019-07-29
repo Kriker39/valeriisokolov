@@ -1,0 +1,89 @@
+/* CustomScroll(don't touch) */
+
+.container_scroll{
+	position: absolute;
+	z-index: 5;
+	top: 0;
+	opacity: 0;
+	height: 100%;
+}
+	.container_scroll .container2_scroll{
+		position: absolute;
+	}
+		.container_scroll .container2_scroll .customScroll{
+			position: absolute;
+			top: 0;
+			cursor: pointer;
+		}
+
+/* Custom(can touch) */
+
+/* Vertical scroll (start) */
+
+.container_scroll{
+	margin-right: 5px;
+	right: 0;
+	width: 80px;
+}
+	.container_scroll .container2_scroll{
+		top: 10px;
+		height: 98%;
+		border-radius: 5px;
+		width: 5px;
+		right: 20px;
+		background-color: silver;
+		box-shadow: 0 0 5px black;
+	}
+		.container_scroll .container2_scroll .customScroll{
+			left: -2.5px;
+			height: 50px;
+			width: 10.5px;
+			border-radius: 5px;
+			background-color: white;
+		}
+
+#comment .container_scroll{
+	width: 40px;
+}
+	#comment .container_scroll .container2_scroll{
+		height: 95%;
+		width: 2px;
+		box-shadow: none;
+		right: 10px;
+	}
+		#comment .container_scroll .container2_scroll .customScroll{
+			box-shadow: 0 0 2px black;
+			height: 12px;
+			width: 12px;
+			left: -5px;
+		}
+
+
+#about_me .container_scroll{
+
+}
+	#about_me .container_scroll .container2_scroll{
+		opacity: 0.7;
+		top: 40px;
+		height: 88%;
+		width: 10.5px;
+		box-shadow: 0 0 5px rgba(0,0,0,0.8) inset;
+		background-color: #BEF5B5;
+	}
+		#about_me .container_scroll .container2_scroll .customScroll{
+			background-color: #379928;
+			left: 0;
+
+		}
+
+
+
+
+/* Vertical scroll (end) */
+
+
+/* Horizontal scroll (start) */
+
+
+
+/* Horizontal scroll (end) */
