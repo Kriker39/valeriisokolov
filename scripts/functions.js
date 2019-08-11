@@ -130,33 +130,25 @@ function getInfoAjax(name){ // получение инфо через Ajax
 
 			if (text!="error")
 			{
-				htmlInfoProject = "<div id='name'>"+name+"</div>"
-				+"<div class='container_bl'><div class='container_bl2'><div id='link' src='"+text["link"]+"'><div class='button_link'>ПЕРЕЙТИ</div></div></div>";
-				
+				htmlInfoProject = "<div id='name'>"+name+"</div>"+
+				"<div class='container_bl'>";
+
+				if (text["link"]!= null)
+				{
+					htmlInfoProject = htmlInfoProject + "<div class='container_bl2'><div id='link' src='"+text["link"]+"'><div class='button_link'>ПЕРЕЙТИ</div></div></div>";
+				}
+
 				if (text["github"]!= null)
 				{
 					htmlInfoProject = htmlInfoProject + "<div class='container_bl2'><div id='link' src='"+text["github"]+"'><div class='button_link'>Github</div></div></div>";
 				}
-				htmlInfoProject = htmlInfoProject + "</div>"
-				+"<div class='comment_text'><div id='comment_text_back'></div><div id='comment_text_back2'>Коментарий</div></div><div id='comment'>"+text["comment"]+"</div>";
+				htmlInfoProject = htmlInfoProject + "</div>"+
+				"<div class='comment_text'><div id='comment_text_back'></div><div id='comment_text_back2'>Коментарий</div></div><div id='comment'>"+text["comment"]+"</div>";
 			}
 		
 			jQuery(".text_pi").html(htmlInfoProject);
 		}
 	});
-
-
-	/*var req = new XMLHttpRequest(); //Ajax без jQuery
-
-	req.onreadystatechange = function(){
-		if (req.readyState==4)
-		{
-			alert("readyState=4");
-		}
-	}
-
-	req.open('GET', 'ip.php');
-	req.send();*/
 }
 
 	/******** Информация про проект(end) ********/

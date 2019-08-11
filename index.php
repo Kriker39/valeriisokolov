@@ -51,24 +51,26 @@ require_once("includes/db_connect.php");
 	<section class="projects">
 		<ul>
 			<?php
-				$query="SELECT name FROM projects";
-				$result= mysqli_query($connection, $query);
-				while ($data=mysqli_fetch_assoc($result))
-				{
-					$name = $data["name"];
-					echo '
-					<li>
+				$result=  R::getCol( 'SELECT name FROM projects' ); 
+				foreach ($result as $name) {
+					echo '<li>
 						<div name="'.$name.'">
 							<img src="'.$config["link"]["link_to_imgs"].$name.'.png"/>
 							<div class="img_after"></div>
 							<div class="name_link"><div>'.$name.'</div></div>
 						</div>
-					</li>
-					';
+					</li>';
 				}
 			?>
 		</ul>
 	</section>
+
+	<article class="panel_info">
+		<div class="container_pi">
+			<div class="close_pi">Close[<span id="cross">&times;</span>]</div>
+			<div class="text_pi"></div>
+		</div>
+	</article>
 
 	<section class="about_me">
 		<div id="about_me">
@@ -111,13 +113,6 @@ require_once("includes/db_connect.php");
 			?>
 		</div>
 	</section>
-
-	<article class="panel_info">
-		<div class="container_pi">
-			<div class="close_pi">Close[x]</div>
-			<div class="text_pi"></div>
-		</div>
-	</article>
 
 	<script>catch_error_image();</script>
 

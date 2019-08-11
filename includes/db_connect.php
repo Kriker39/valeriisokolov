@@ -1,12 +1,6 @@
 <?php
 	require_once("config.php");
+	require 'lib/rb.php';
 
-	$connection = mysqli_connect($config["db"]["server"], $config["db"]["name_user"], $config["db"]["password"], $config["db"]["name_db"]);
-
-	if ($connection == false)
-	{
-		echo '<script>alert("Error. Не удалось подключится к базе данных!");</script>';
-		exit();
-	}
-	mysqli_query($connection,'SET NAMES "utf8"');
+	R::setup("mysql:host=".$config['db']['server'].";dbname=".$config['db']['name_db'],$config["db"]["name_user"],$config["db"]["password"]);
 ?>
