@@ -26,7 +26,7 @@
 		padding: 2px 10px;
 		border-radius: 5px;
 	}
-.container_add_project{
+.container_admin_project{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -35,14 +35,14 @@
 	text-align: left;
 	padding: 20px;
 }
-	.container_add_project textarea{
+	.container_admin_project textarea{
 		width: 80%;
 		height: 200px;
 	}
-	.container_add_project input{
+	.container_admin_project input{
 		width: 80%;
 	}
-#submit_add_project{
+#submit_add_project, #submit_update_project{
 	font-size: 20px;
 }
 

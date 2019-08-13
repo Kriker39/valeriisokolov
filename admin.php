@@ -70,7 +70,7 @@ if((isset($_SESSION['admin']) && $_SESSION['admin']!=true) || !isset($_SESSION['
 		</div>
 		<ul>
 			<?php
-				$result=  R::getCol( 'SELECT name FROM projects' ); 
+				$result=  R::getCol( 'SELECT name FROM projects ORDER BY id DESC' ); 
 				foreach ($result as $name) {
 					echo '<li>
 						<div name="'.$name.'">
