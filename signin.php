@@ -13,12 +13,22 @@ require_once("includes/db_connect.php");
 	<div id="error_msg">Ошибка</div>
 	<div class="container_signin_admin">
 		<p>Логин:<br><input type="text" id="login_admin"></p>
-		<p>Пароль:<br><input type="password" id="pass_admin"></p>
-		<p>Ключ:<br><input type="password" id="key_admin"></p>
+		<p>Пароль:<br><input type="password" id="pass_admin"><button onclick="inputType(this, 'pass_admin')">show</button></p>
+		<p>Ключ:<br><input type="password" id="key_admin"><button onclick="inputType(this, 'key_admin')">show</button></p>
 		<p><button id="submit_signin_admin" onclick="signInAdmin()">Войти</button></p>
 	</div>
 
 <script>
+	function inputType(caller, id){
+		if(caller.innerText=="show"){
+			caller.innerText="hide";
+			document.getElementById(id).setAttribute("type", "text");
+		}
+		else{
+			caller.innerText="show";
+			document.getElementById(id).setAttribute("type", "password");
+		}
+	}
 	function signInAdmin(){
 		error_msg.style.opacity=0;
 		var login= login_admin.value.trim(),

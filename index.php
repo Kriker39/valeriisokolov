@@ -17,7 +17,6 @@ require_once("includes/db_connect.php");
 <body>
 
 <div class="shadow">
-
 	<header class="header"><!--
 		<div class="container_ln">
 			<div class="language">
@@ -49,20 +48,22 @@ require_once("includes/db_connect.php");
 	</header>
 
 	<section class="projects">
-		<ul>
-			<?php
-				$result=  R::getCol( 'SELECT name FROM projects' ); 
-				foreach ($result as $name) {
-					echo '<li>
-						<div name="'.$name.'">
-							<img src="'.$config["link"]["link_to_imgs"].$name.'.png"/>
-							<div class="img_after"></div>
-							<div class="name_link"><div>'.$name.'</div></div>
-						</div>
-					</li>';
-				}
-			?>
-		</ul>
+		<div class="container_projects">
+			<ul>
+				<?php
+					$result=  R::getCol( 'SELECT name FROM projects ORDER BY id DESC' ); 
+					foreach ($result as $name) {
+						echo '<li>
+							<div name="'.$name.'">
+								<img src="'.$config["link"]["link_to_imgs"].$name.'.png"/>
+								<div class="img_after"></div>
+								<div class="name_link"><div>'.$name.'</div></div>
+							</div>
+						</li>';
+					}
+				?>
+			</ul>
+		</div>
 	</section>
 
 	<article class="panel_info">
@@ -74,22 +75,33 @@ require_once("includes/db_connect.php");
 
 	<section class="about_me">
 		<div id="about_me">
-			<?php 
-				$file= fopen($config["link"]["about_me.txt"], "rt"); // открывает файл для чтения 
-				
-				if ($file) 
-				{
-				    while (!feof($file)) // Команда feof определяет, произведено ли чтение до конца файла
-				    { 
-					   $line = fgets($file); // достает строку текста из файла 
+			<ul>
+				<?php 
+					$path='data/txt/about_me';
+					$dir = opendir($path);
+					$count = 0;
+					while($file = readdir($dir)){
+					    if(!preg_match("/(\.txt)$/", $file) || preg_match("/(\.txt){2,}/", $file)){
+					        continue;
+					    }
+					    $openFile= fopen($path."/".$file, "rt"); // открывает файл для чтения 
+					    if ($openFile) 
+						{
+							echo "<li class='block_about_me' onclick='randomBackgroundColor(this);'>";
+							    while (!feof($openFile)) // Команда feof определяет, произведено ли чтение до конца файла
+							    { 
+								   $line = fgets($openFile); // достает строку текста из файла 
 
-					   $coding=iconv_get_encoding($line); // получает кодировку полученого текста
-					   $line=iconv($coding, "UTF-8", $line); // переводит текст из полученой кодировки в UTF-8
-					  
-					   echo $line."<br>";
+								   $coding=iconv_get_encoding($line); // получает кодировку полученого текста
+								   // $line=iconv($coding, "UTF-8", $line); // переводит текст из полученой кодировки в UTF-8
+								  
+								   echo $line."<br>";
+								}
+							echo "</li>";
+						}
 					}
-				}
-			?>
+				?>
+			</ul>
 		</div>
 	</section>
 
@@ -115,6 +127,43 @@ require_once("includes/db_connect.php");
 	</section>
 
 	<script>catch_error_image();</script>
+	<script type="text/javascript">
+		lastColor=0;
+		function randomBackgroundColor(elem){
+			rand=0;
+			rand= Math.floor(Math.random() * 5)+1;
+
+			elemColor=getComputedStyle(elem).backgroundColor;
+			switch (elemColor){ // цвет в цифры
+				case "rgb(208, 203, 252)": elemColor=1;break;
+				case "rgb(203, 240, 252)": elemColor=2;break;
+				case "rgb(245, 255, 205)": elemColor=3;break;
+				case "rgb(244, 196, 228)": elemColor=4;break;
+				case "rgb(255, 207, 205)": elemColor=5;break;
+				default: elemColor=0;break;
+			}
+
+			while(true){ // проверяет не повторяется ли цвет, проверяет чтобы ццвет не повторялся подряд 1 раз
+				if(lastColor==rand || elemColor==rand){
+					rand= Math.floor(Math.random() * 5)+1;
+				}
+				else {
+					lastColor=rand;
+					break;
+				}
+			}
+
+			switch (rand){ // число в HEX цвет 
+				case 1: color="#D0CBFC";break;
+				case 2: color="#CBF0FC";break;
+				case 3: color="#F5FFCD";break;
+				case 4: color="#F4C4E4";break;
+				case 5: color="#FFCFCD";break;
+				default: color="#FFFFFF";break;
+			}
+			elem.style.backgroundColor=color;
+		}
+	</script>
 
 </div>
 

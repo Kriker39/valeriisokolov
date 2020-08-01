@@ -2,7 +2,7 @@
 var hide; // обьявление переменной для задержки анимации спрятывания
 
 jQuery(document).ready(function(){
-	setTimeout(workCustomScroll,0 ,'.projects');
+	setTimeout(workCustomScroll,0 ,'.container_projects');
 	setTimeout(workCustomScroll,10 ,'.about_me div');
 });
 
@@ -40,7 +40,6 @@ function addCustomScroll(element) { // добавляет блоки для ре
 
 function onMovePage(stepScroll, name_elem){ // работа скролла при скроллинге мышкой
 	jQuery(name_elem).bind("mousewheel", function(e){ // отслеживание работы скролла
-
 		clearTimeout(hide); // отменяет задержку спрятывания
 		hide= setTimeout(function(){ // задержка спрятывания
 			jQuery(name_elem+" .container_scroll").animate({"opacity":"0"},300);
@@ -63,7 +62,7 @@ function onMovePage(stepScroll, name_elem){ // работа скролла пр�
 
 			stepAnim= (heightConteinerScroll2-heightBtnScroll)/sumScrolls, // шаг в px для анимации скролла
 			stepNow= Math.ceil(valueElemDataScroll/stepScroll); // шаг на котором сейчас находятся блоки
-				
+	
 		if((stepNow==0 && e.originalEvent.wheelDelta > 0) || (stepNow==sumScrolls && e.originalEvent.wheelDelta < 0)) {} // блокирует если выходит за границы
 		else
 		{

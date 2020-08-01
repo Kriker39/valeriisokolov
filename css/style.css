@@ -143,9 +143,17 @@ body {
 	text-align: center;
 	top: 179px;
 	left: 0;
+	bottom: 30px;
 	width: 100%;
-	height: 85%;
 }
+	.projects .container_projects{
+		position: absolute;
+		background-color: rgba(201,255,193,0.8);
+		width: 80%;
+		height: 100%;
+		left: 10%;
+		border-radius: 10px;
+	}.projects ul{padding: 0;}
 	.projects ul>li{
 		display: inline-block;
 		margin: 50px;
@@ -215,7 +223,7 @@ body {
 		left: 7%;
 		width: 80%;
 
-		background-color: rgba(255,255,255,1);
+		background-color: rgba(221, 255, 217, 0.95);
 		padding: 50px 50px 0 50px;
 		border-radius: 10px;
 
@@ -227,6 +235,21 @@ body {
 	
 		word-wrap: break-word;
 		overflow: hidden;
+	}
+	#about_me ul{
+		text-align: center;
+	}
+	.block_about_me{
+		display: inline-block;
+		user-select: none;
+		margin: 10px;
+		padding: 20px 10px;
+		/*border: 1px black solid;*/
+		border-radius: 10px;
+		text-align: center;
+		max-width: 40%;
+		background-color: #FFFFF9;
+		box-shadow: inset 0px 0px 3px 1px #008E00;
 	}
 
 /* Panel_info */
@@ -384,7 +407,7 @@ body {
 				transition: all .15s linear;
 			}
 				.panel_info .container_pi .close_pi:hover{
-					color: black;
+					color: red;
 				}
 				.panel_info .container_pi .close_pi:hover:before{
 					top: 0;

@@ -12,7 +12,6 @@ $config = array(
 	),
 	"link" => array(
 		"contacts.txt" => "data/txt/contacts.txt",
-		"about_me.txt" => "data/txt/about_me.txt",
 		"key.txt" => "../../data/txt/key.txt",
 		"jquery.min.js" => "scripts/lib/jquery-3.4.1.min.js",
 		"jquery.cookie.js" => "scripts/lib/jquery.cookie.js",

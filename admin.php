@@ -68,20 +68,22 @@ if((isset($_SESSION['admin']) && $_SESSION['admin']!=true) || !isset($_SESSION['
 			<button id="update_project">Редактировать</button>
 			<button id="delete_project">Удалить</button>
 		</div>
-		<ul>
-			<?php
-				$result=  R::getCol( 'SELECT name FROM projects ORDER BY id DESC' ); 
-				foreach ($result as $name) {
-					echo '<li>
-						<div name="'.$name.'">
-							<img src="'.$config["link"]["link_to_imgs"].$name.'.png"/>
-							<div class="img_after"></div>
-							<div class="name_link"><div>'.$name.'</div></div>
-						</div>
-					</li>';
-				}
-			?>
-		</ul>
+		<div class="container_projects">
+			<ul>
+				<?php
+					$result=  R::getCol( 'SELECT name FROM projects ORDER BY id DESC' ); 
+					foreach ($result as $name) {
+						echo '<li>
+							<div name="'.$name.'">
+								<img src="'.$config["link"]["link_to_imgs"].$name.'.png"/>
+								<div class="img_after"></div>
+								<div class="name_link"><div>'.$name.'</div></div>
+							</div>
+						</li>';
+					}
+				?>
+			</ul>
+		</div>
 	</section>
 
 	<article class="panel_info">

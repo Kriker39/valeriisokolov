@@ -27,7 +27,7 @@
 }
 	.container_scroll .container2_scroll{
 		top: 10px;
-		height: 98%;
+		bottom: 10px;
 		border-radius: 5px;
 		width: 5px;
 		right: 20px;

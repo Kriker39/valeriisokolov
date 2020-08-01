@@ -69,14 +69,17 @@
 	margin: 50px auto;
 }
 	.container_signin_admin p>input{
-		width: 100%;
+		display: inline-block;
+		width: 80%;
 		font-size: 25px;
 	}
 	.container_signin_admin p>button{
+		font-size: 25px;
+		font-family: 'Exo 2', sans-serif;
+	}
+	#submit_signin_admin{
 		position: relative;
 		margin-left: 50%;
 		width: 100px;
 		left: -50px;
-		font-size: 25px;
-		font-family: 'Exo 2', sans-serif;
 	}
