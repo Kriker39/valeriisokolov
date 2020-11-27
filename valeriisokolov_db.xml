@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.9.2
+- https://www.phpmyadmin.net
+-
+- Хост: 127.0.0.1:3306
+- Время создания: Ноя 25 2020 г., 16:53
+- Версия сервера: 5.7.28
+- Версия PHP: 7.3.12
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="valeriisokolov_db" collation="utf8_general_ci" charset="utf8">
+            <pma:table name="admin">
+                CREATE TABLE `admin` (
+                  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+                  `login` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                  `password` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+            <pma:table name="projects">
+                CREATE TABLE `projects` (
+                  `id` int(5) NOT NULL AUTO_INCREMENT,
+                  `name` varchar(255) NOT NULL,
+                  `link` varchar(255) DEFAULT NULL,
+                  `github` varchar(255) DEFAULT NULL,
+                  `comment_ru` text,
+                  `comment_en` text,
+                  `comment_ua` text,
+                  `comment` tinyint(1) unsigned DEFAULT NULL,
+                  PRIMARY KEY (`id`),
+                  UNIQUE KEY `name` (`name`),
+                  UNIQUE KEY `link` (`link`)
+                ) ENGINE=MyISAM AUTO_INCREMENT=81 DEFAULT CHARSET=utf8;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - База данных: 'valeriisokolov_db'
+    -->
+    <database name="valeriisokolov_db">
+        <!-- Таблица admin -->
+        <table name="admin">
+            <column name="id">1</column>
+            <column name="login">Kriker39</column>
+            <column name="password">$2y$10$/WV6DgklWVAHyCIJoDj0feqyJBp9Yuh2J1aKWHciCMxsjVM7LFTpW</column>
+        </table>
+        <!-- Таблица projects -->
+        <table name="projects">
+            <column name="id">1</column>
+            <column name="name">valeriisokolov.ua</column>
+            <column name="link">http://valeriisokolov.ua</column>
+            <column name="github">https://github.com/Kriker39/valeriisokolov.ua</column>
+            <column name="comment_ru">Мой личный сайт чтобы показать работы которые сделал я или в которых брал участие.</column>
+            <column name="comment_en">My personal site to show the work that I have done or in which I took part.</column>
+            <column name="comment_ua">Мій особистий сайт щоб показати роботи які зробив я або в яких брав участь.</column>
+            <column name="comment">NULL</column>
+        </table>
+        <table name="projects">
+            <column name="id">2</column>
+            <column name="name">calculator</column>
+            <column name="link">http://valeriisokolov.ua/projects/calculator</column>
+            <column name="github">https://github.com/Kriker39/calculator</column>
+            <column name="comment_ru">Calculator создавался во время изучения jQuery. Цель создания проекта была в том чтобы улучшить навыки владения html, js(jQuery, Ajax), php.</column>
+            <column name="comment_en">NULL</column>
+            <column name="comment_ua">NULL</column>
+            <column name="comment">NULL</column>
+        </table>
+        <table name="projects">
+            <column name="id">69</column>
+            <column name="name">test01.com</column>
+            <column name="link">NULL</column>
+            <column name="github">NULL</column>
+            <column name="comment_ru"></column>
+            <column name="comment_en"></column>
+            <column name="comment_ua"></column>
+            <column name="comment">NULL</column>
+        </table>
+        <table name="projects">
+            <column name="id">70</column>
+            <column name="name">test02.com</column>
+            <column name="link">NULL</column>
+            <column name="github">NULL</column>
+            <column name="comment_ru"></column>
+            <column name="comment_en"></column>
+            <column name="comment_ua"></column>
+            <column name="comment">NULL</column>
+        </table>
+        <table name="projects">
+            <column name="id">71</column>
+            <column name="name">test03.com</column>
+            <column name="link">NULL</column>
+            <column name="github">NULL</column>
+            <column name="comment_ru"></column>
+            <column name="comment_en">NULL</column>
+            <column name="comment_ua">NULL</column>
+            <column name="comment">NULL</column>
+        </table>
+        <table name="projects">
+            <column name="id">72</column>
+            <column name="name">test04.com</column>
+            <column name="link">NULL</column>
+            <column name="github">NULL</column>
+            <column name="comment_ru"></column>
+            <column name="comment_en">NULL</column>
+            <column name="comment_ua">NULL</column>
+            <column name="comment">NULL</column>
+        </table>
+        <table name="projects">
+            <column name="id">73</column>
+            <column name="name">test05.com</column>
+            <column name="link">NULL</column>
+            <column name="github">NULL</column>
+            <column name="comment_ru"></column>
+            <column name="comment_en">NULL</column>
+            <column name="comment_ua">NULL</column>
+            <column name="comment">NULL</column>
+        </table>
+        <table name="projects">
+            <column name="id">74</column>
+            <column name="name">test06.com</column>
+            <column name="link">NULL</column>
+            <column name="github">NULL</column>
+            <column name="comment_ru"></column>
+            <column name="comment_en">NULL</column>
+            <column name="comment_ua">NULL</column>
+            <column name="comment">NULL</column>
+        </table>
+        <table name="projects">
+            <column name="id">75</column>
+            <column name="name">test07.com</column>
+            <column name="link">NULL</column>
+            <column name="github">NULL</column>
+            <column name="comment_ru"></column>
+            <column name="comment_en">NULL</column>
+            <column name="comment_ua">NULL</column>
+            <column name="comment">NULL</column>
+        </table>
+        <table name="projects">
+            <column name="id">76</column>
+            <column name="name">test08.com</column>
+            <column name="link">NULL</column>
+            <column name="github">NULL</column>
+            <column name="comment_ru"></column>
+            <column name="comment_en">NULL</column>
+            <column name="comment_ua">NULL</column>
+            <column name="comment">NULL</column>
+        </table>
+        <table name="projects">
+            <column name="id">77</column>
+            <column name="name">test09.com</column>
+            <column name="link">NULL</column>
+            <column name="github">NULL</column>
+            <column name="comment_ru">русский ru</column>
+            <column name="comment_en">endlish en</column>
+            <column name="comment_ua">українська ua</column>
+            <column name="comment">NULL</column>
+        </table>
+        <table name="projects">
+            <column name="id">79</column>
+            <column name="name">test123</column>
+            <column name="link">asd</column>
+            <column name="github">asd</column>
+            <column name="comment_ru">NULL</column>
+            <column name="comment_en">NULL</column>
+            <column name="comment_ua">NULL</column>
+            <column name="comment">NULL</column>
+        </table>
+        <table name="projects">
+            <column name="id">80</column>
+            <column name="name">test1234</column>
+            <column name="link">asdasd</column>
+            <column name="github">asd</column>
+            <column name="comment_ru">rus</column>
+            <column name="comment_en">eng</column>
+            <column name="comment_ua">ua</column>
+            <column name="comment">NULL</column>
+        </table>
+    </database>
+</pma_xml_export>

@@ -6,6 +6,8 @@ require_once("includes/db_connect.php");
 <head>
 	<meta charset="utf-8"/>
 	<title> <?php echo $config["title"]; ?> </title>
+	<link rel="shortcut icon" href="<?php echo $config["linkimg"]["favicon.png"]; ?>" type="image/x-icon">
+	<link rel="icon" href="<?php echo $config["linkimg"]["favicon.png"]; ?>" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="<?php echo $config["link"]["adminStyle.css"]; ?>">
 	<link href="<?php echo $config["link"]["font_Exo2"]; ?>" rel="stylesheet">
 </head>
@@ -13,12 +15,17 @@ require_once("includes/db_connect.php");
 	<div id="error_msg">Ошибка</div>
 	<div class="container_signin_admin">
 		<p>Логин:<br><input type="text" id="login_admin"></p>
-		<p>Пароль:<br><input type="password" id="pass_admin"><button onclick="inputType(this, 'pass_admin')">show</button></p>
-		<p>Ключ:<br><input type="password" id="key_admin"><button onclick="inputType(this, 'key_admin')">show</button></p>
+		<p>Пароль:<br><input type="password" id="pass_admin"><button tabindex="-1" onclick="inputType(this, 'pass_admin')">show</button></p>
+		<p>Ключ:<br><input type="password" id="key_admin"><button tabindex="-1" onclick="inputType(this, 'key_admin')">show</button></p>
 		<p><button id="submit_signin_admin" onclick="signInAdmin()">Войти</button></p>
 	</div>
 
 <script>
+	document.addEventListener('keydown', function(event) {
+		if (event.code == 'Enter') {
+			signInAdmin();
+		}
+	});
 	function inputType(caller, id){
 		if(caller.innerText=="show"){
 			caller.innerText="hide";

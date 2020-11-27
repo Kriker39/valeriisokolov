@@ -1,0 +1,41 @@
+===База данных valeriisokolov_db
+
+== Структура таблицы admin
+
+|------
+|Столбец|Тип|Null|По умолчанию
+|------
+|//**id**//|int(11)|Нет|
+|login|varchar(191)|Да|NULL
+|password|varchar(191)|Да|NULL
+== Дамп данных таблицы admin
+
+|1|Kriker39|$2y$10$/WV6DgklWVAHyCIJoDj0feqyJBp9Yuh2J1aKWHciCMxsjVM7LFTpW
+== Структура таблицы projects
+
+|------
+|Столбец|Тип|Null|По умолчанию
+|------
+|//**id**//|int(5)|Нет|
+|**name**|varchar(255)|Нет|
+|**link**|varchar(255)|Да|NULL
+|github|varchar(255)|Да|NULL
+|comment_ru|text|Да|NULL
+|comment_en|text|Да|NULL
+|comment_ua|text|Да|NULL
+|comment|tinyint(1)|Да|NULL
+== Дамп данных таблицы projects
+
+|1|valeriisokolov.ua|http://valeriisokolov.ua|https://github.com/Kriker39/valeriisokolov.ua|Мой личный сайт чтобы показать работы которые сделал я или в которых брал участие.|My personal site to show the work that I have done or in which I took part.|Мій особистий сайт щоб показати роботи які зробив я або в яких брав участь.|NULL
+|2|calculator|http://valeriisokolov.ua/projects/calculator|https://github.com/Kriker39/calculator|Calculator создавался во время изучения jQuery. Цель создания проекта была в том чтобы улучшить навыки владения html, js(jQuery, Ajax), php.|NULL|NULL|NULL
+|69|test01.com|NULL|NULL| | | |NULL
+|70|test02.com|NULL|NULL| | | |NULL
+|71|test03.com|NULL|NULL| |NULL|NULL|NULL
+|72|test04.com|NULL|NULL| |NULL|NULL|NULL
+|73|test05.com|NULL|NULL| |NULL|NULL|NULL
+|74|test06.com|NULL|NULL| |NULL|NULL|NULL
+|75|test07.com|NULL|NULL| |NULL|NULL|NULL
+|76|test08.com|NULL|NULL| |NULL|NULL|NULL
+|77|test09.com|NULL|NULL|русский ru|endlish en|українська ua|NULL
+|79|test123|asd|asd|NULL|NULL|NULL|NULL
+|80|test1234|asdasd|asd|rus|eng|ua|NULL

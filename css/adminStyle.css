@@ -1,15 +1,5 @@
 /* Admin */
 
-.btn_exit_admin{
-	position: absolute;
-	top: 0;
-	right: 0;
-}
-	.btn_exit_admin button{
-		font-size: 20px;
-		background-color: #FFC7C7;
-		border-color: #FF8585;
-	}
 .admin_panel_projects{
 	position: fixed;
 	z-index: 1;
@@ -26,6 +16,17 @@
 		padding: 2px 10px;
 		border-radius: 5px;
 	}
+.btn_exit_admin{
+	display: block;
+	margin: 15px 0;
+	font-size: 30px;
+}
+	.btn_exit_admin button{
+		font-size: 20px;
+		color: black;
+		background-color: #FFC7C7;
+		border-color: #FF8585;
+	}
 .container_admin_project{
 	position: absolute;
 	top: 0;
@@ -38,6 +39,10 @@
 	.container_admin_project textarea{
 		width: 80%;
 		height: 200px;
+		resize: none;
+		z-index: 1;
+		position: absolute;
+		top: 50%;
 	}
 	.container_admin_project input{
 		width: 80%;
@@ -45,7 +50,12 @@
 #submit_add_project, #submit_update_project{
 	font-size: 20px;
 }
-
+.container_pi .text_pi #comment>div{
+	position: absolute;
+	left: 0;
+	right: 0;
+	opacity: 0;
+}
 
 /* Sign in admin */
 

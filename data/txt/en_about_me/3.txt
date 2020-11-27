@@ -1,0 +1,6 @@
+&emsp;In addition to my studies, I am engaged in my own development in the field of web programming.
+Now I'm studying:
+&ensp;HTML
+&ensp;CSS
+&ensp;JS(jQuery, Ajax)
+&ensp;PHP

@@ -2,11 +2,11 @@
 	
 	require_once("../db_connect.php");
 
-	$id = $_POST["id"];
-	$name = $_POST["name"]; 
-	$link = $_POST["link"]; 
-	$link_github = $_POST["link_github"]; 
-	$comment = $_POST["comment"]; 
+	$id = array_shift($_POST);
+	$name = array_shift($_POST); 
+	$link = array_shift($_POST); 
+	$link_github = array_shift($_POST); 
+	$comments = $_POST; 
 
 	$result=R::findOne('projects', 'name=? AND id<>?',array($name, $id));
 
@@ -27,7 +27,10 @@
 	$project->name=$name;
 	$project->link=$link;
 	$project->github=$link_github;
-	$project->comment=$comment;
+	
+	foreach($comments as $key=>$value){
+		$project->$key=$value;
+	}
 
 	if(R::store($project)) {
 		echo json_encode("0");

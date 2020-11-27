@@ -65,7 +65,7 @@
 	#about_me .container_scroll .container2_scroll{
 		opacity: 0.7;
 		top: 40px;
-		height: 88%;
+		bottom: 40px;
 		width: 10.5px;
 		box-shadow: 0 0 5px rgba(0,0,0,0.8) inset;
 		background-color: #BEF5B5;
@@ -76,7 +76,28 @@
 
 		}
 
+#contacts .container_scroll{
 
+}
+	#contacts .container_scroll .container2_scroll{
+		opacity: 0.7;
+		top: 40px;
+		bottom: 40px;
+		width: 10.5px;
+		background-color: rgba(0,0,0,0);
+		box-shadow: 0 0 2px rgba(0,0,0,0.8) inset;
+
+		border-top: 2px black solid;
+		border-bottom: 2px black solid;
+		
+	}
+		#contacts .container_scroll .container2_scroll .customScroll{
+			background-color: rgba(221, 255, 217, 0.95);
+			border-left: 2px black solid;
+			border-right: 2px black solid;
+			left: -2px;
+
+		}
 
 
 /* Vertical scroll (end) */

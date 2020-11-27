@@ -16,7 +16,7 @@ R::store($admin);
 	$admin= R::findOne('admin', 'login=?', array($login));
 	if($admin){
 		if(password_verify($pass, $admin->password)){
-			if(check_key($key, $config["link"]["key.txt"])){
+			if(check_key($key, $config["linkspec"]["key.txt"])){
 				$error= false;
 			}
 		}

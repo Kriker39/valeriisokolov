@@ -1,0 +1,6 @@
+Вивчав в навчальних закладах:
+&ensp;HTML,CSS,Javascript,php
+&ensp;C++
+&ensp;C#
+&ensp;Java
+&ensp;Pascal

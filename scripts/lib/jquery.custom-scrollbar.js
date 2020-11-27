@@ -1,14 +1,44 @@
 
 var hide; // обьявление переменной для задержки анимации спрятывания
 
+// сюда вписывать селекторы на элементы которым нужен селектор
+var selectors = [".container_projects",".about_me>div",".contacts>div"]; 
+//**************************
+
 jQuery(document).ready(function(){
-	setTimeout(workCustomScroll,0 ,'.container_projects');
-	setTimeout(workCustomScroll,10 ,'.about_me div');
+	do_funcs();
 });
+jQuery(window).resize(function(){
+	delete_scrolls();
+	for(var select of selectors){
+		if(check_resize){
+			jQuery(select).unbind();
+			setTimeout(workCustomScroll,0 ,select);
+		}
+	}
+});
+
+function do_funcs(){
+	var i=0;
+
+	for(var select of selectors){
+		setTimeout(workCustomScroll,i ,select);
+		i++;
+	}
+}
+
+function check_resize(selec){ // проверяет выходит ли контент за границы(нужен скрол или нет)
+	elem= jQuery(selec);
+	return elem.scrollWidth > elem.offsetWidth || elem.scrollHeight > elem.offsetHeight;
+}
+
+function delete_scrolls(){ // удаляет все скролы
+	jQuery(".container_scroll").remove();
+}
 
 function workCustomScroll(name_elem){
 	var valueAnim= 0, // значение отступа сверху для .customScroll
-		stepScroll= 100, // шаг скроллинга
+		stepScroll= 50, // шаг скроллинга
 		valuePositionMouse; // динамическое значение положения мышки 
 
 	addCustomScroll(jQuery(name_elem)); // добавляет блоки для реализации скролла
@@ -83,7 +113,7 @@ function onMovePage(stepScroll, name_elem){ // работа скролла пр�
 
 			jQuery(name_elem).scrollTop(valueElemDataScroll); // устанавливает значение скролла
 			
-			jQuery(name_elem+" .container_scroll .container2_scroll .customScroll").animate({"top":valueAnim},15); // анимация скролла
+			jQuery(name_elem+" .container_scroll .container2_scroll .customScroll").animate({"top":valueAnim},0); // анимация скролла
 		}
 	});
 }
@@ -112,15 +142,16 @@ function onMoveScroll(stepScroll, name_elem){ // работа скролла п�
 			jQuery(name_elem+" .container_scroll").unbind("mouseenter");
 			clearTimeout(hide);
 
-			var heightConteinerScroll= jQuery(name_elem+" .container_scroll").height(), // высота 1-го контейнера скролла
-				heightConteinerScroll2= jQuery(name_elem+" .container_scroll .container2_scroll").height(), // высота 2-го контейнера скролла
-				heightBtnScroll= jQuery(name_elem+" .container_scroll .container2_scroll .customScroll").height(), // высота кнопки скроллинга
+			var 
+			// heightConteinerScroll= jQuery(name_elem+" .container_scroll").height(), // высота 1-го контейнера скролла
+				heightConteinerScroll2= jQuery(name_elem+" .container_scroll .container2_scroll").outerHeight(true), // высота 2-го контейнера скролла
+				heightBtnScroll= jQuery(name_elem+" .container_scroll .container2_scroll .customScroll").outerHeight(), // высота кнопки скроллинга
 				heightElemData= jQuery(name_elem)[0].scrollHeight, // высота контента в блоке куда вставляется скролла
-				heightElem= jQuery(name_elem).height(), // высота блока в который вставляется скролл
+				heightElem= jQuery(name_elem).outerHeight(true), // высота блока в который вставляется скролл
 				heightScrollWithoutBtn= heightConteinerScroll2-heightBtnScroll, // у высоты 2-го контейнера скролла отнимается высота кнопки скролла
 				heightElemDataWithoutElem= Math.round(heightElemData-heightElem), // у высоты контента отнимается высота блока в который вставляется скролл 
-				heightBody=jQuery(window).height(), // высота окна
-				topConteinerScroll2= parseInt(jQuery(name_elem+" .container_scroll .container2_scroll").css("top")), // отступа сверху 2-го контейнера скролла 
+				// heightBody=jQuery(window).height(), // высота окна
+				// topConteinerScroll2= parseInt(jQuery(name_elem+" .container_scroll .container2_scroll").css("top")), // отступа сверху 2-го контейнера скролла 
 				heightIndentScroll= jQuery(name_elem+" .container_scroll .container2_scroll").offset(), // расположение 2-го контейнера скролла относительно страницы(return top, left)
 				
 				stepElemScroll= heightElemDataWithoutElem/heightScrollWithoutBtn, // значение в сколько раз высота скролла меньше высоты контента в блоке
@@ -136,7 +167,7 @@ function onMoveScroll(stepScroll, name_elem){ // работа скролла п�
 					}
 			});
 
-			jQuery('body').bind("mouseleave",function(){ // прирывание при выходе курсора за предели body
+			jQuery('body').bind("mouseleave",function(){ // прирывание при выходе курсора за пределы body
 				stopWorkMoveScroll(name_elem);
 			});
 		

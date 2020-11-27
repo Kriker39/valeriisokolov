@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-require_once("includes/db_connect.php");
+require_once("../../includes/db_connect.php");
 ?>
 <html>
 <head>
@@ -30,29 +30,29 @@ require_once("includes/db_connect.php");
 <div class="container_ln">
 	<div class="language">
 		<div class="en">EN</div> | 
-		<div class="ru active">RU</div> | 
-		<div class="ua">UA</div>
+		<div class="ru">RU</div> | 
+		<div class="ua active">UA</div>
 	</div>
 </div>
 
 <div class="shadow">
-	<header class="header">
+	<header class="header">  
 		<div class="container_header_img" onclick="animation_mask();"><img class="header_img" src="<?php echo $config["linkimg"]["developer_photo.png"]; ?>"/><img class="header_mask" src="<?php echo $config["linkimg"]["mask.png"]; ?>"></div>
 		<nav>
 			<ul>
 				<li> 
 					<div class="menu_item">
-						<div href=" " id="projects_btn">Проекты</div>
+						<div href=" " id="projects_btn">Проекти</div>
 					</div>
 				</li>
 				<li> 
 					<div class="menu_item">
-						<div href=" " id="about_me_btn">Обо мне</div>
+						<div href=" " id="about_me_btn">Про мене</div>
 					</div>
 				</li>
 				<li>
 					<div class="menu_item">
-						<div href=" " id="contacts_btn">Контакты</div>
+						<div href=" " id="contacts_btn">Контакти</div>
 					</div>
 				</li>
 			</ul>
@@ -89,7 +89,7 @@ require_once("includes/db_connect.php");
 		<div id="about_me">
 			<ul>
 				<?php 
-					$path='data/txt/ru_about_me';
+					$path='../../data/txt/ua_about_me';
 					$dir = opendir($path);
 					$count = 0;
 					while($file = readdir($dir)){
@@ -123,9 +123,9 @@ require_once("includes/db_connect.php");
 			<p><img src="<?php echo $config["linkimg"]["icon_gmail.png"]; ?>"><span id="gmail">sokolovalerii@gmail.com</span><img class="icon" src="/images/copy_icon.png" onclick="copyfunc('#gmail');"></p>
 			<form>
 				<div class="feedback_error">error</div>
-				От кого:<br><input type="text" name="email">
-				Сообщение:<br><textarea name="message"></textarea>
-				<button class="submit_feedback" type="button"><span>Отправить</span></button>
+				Від кого:<br><input type="text" name="email">
+				Повідомлення:<br><textarea name="message"></textarea>
+				<button class="submit_feedback" type="button"><span>Надіслати</span></button>
 			</form>
 		</div>
 	</section>
